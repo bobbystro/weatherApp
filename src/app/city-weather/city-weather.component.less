@@ -1,0 +1,40 @@
+@import '../../assets/styles/variables/_colors';
+
+.header {
+  .city-name {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .city-temp {
+    font-size: 26px;
+    font-weight: 600;
+    margin-left: 18px;
+    sup {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  .weather-category {
+    margin-right: 18px;
+    font-size: 18px;
+  }
+}
+
+.content {
+  padding: 25px 30px;
+}
+
+.city-filters {
+  display: flex;
+  margin-bottom: 25px;
+  & > div {
+    margin-right: 15px;
+  }
+  label {
+    display: block;
+  }
+  input, select {
+    max-height: 30px;
+  }
+}
+

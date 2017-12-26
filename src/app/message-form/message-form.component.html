@@ -1,0 +1,55 @@
+<div class="row component">
+  <div class="col-md-12">
+    <div class="header">
+      <h1>Send message</h1>
+    </div>
+    <div class="content">
+      <div class="container">
+        <form [formGroup]="messageForm">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group">
+                <label for="messageNameId">Name</label>
+                <input id="messageNameId" class="form-control" placeholder="Your name" formControlName="nameForm" type="text" [(ngModel)]="contactForm.name"
+                       required>
+                <div *ngIf="nameForm.invalid && (nameForm.dirty || nameForm.touched)" class="alert alert-danger">
+                  <div *ngIf="nameForm.errors['required']">Name is required</div>
+                  <div *ngIf="nameForm.errors['minlength']">Name must contain more than 1 letter</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group">
+                <label for="messageEmailId">E-mail</label>
+                <input id="messageEmailId" class="form-control" placeholder="Your e-mail" type="email" formControlName="emailForm" [(ngModel)]="contactForm.email" required>
+                <div *ngIf="emailForm.invalid && (emailForm.dirty || emailForm.touched)" class="alert alert-danger">
+                  <div *ngIf="emailForm.errors['required']">Email is required</div>
+                  <div *ngIf="emailForm.errors['email']">Wrong e-mail</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="messageTypeId">Message type</label>
+            <select id="messageTypeId" class="form-control" required="required">
+              <option value="" disabled selected hidden>Choose message type</option>
+              <option>Message type 1</option>
+              <option>Message type 2</option>
+              <option>Message type 3</option>
+              <option>Message type 4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="messageTextId">Your message</label>
+            <textarea id="messageTextId" class="form-control" rows="5" placeholder="Write your message..."
+                      formControlName="messageText" [(ngModel)]="contactForm.message" required></textarea>
+            <div *ngIf="messageText.invalid && (messageText.dirty || messageText.touched)" class="alert alert-danger">
+              <div *ngIf="messageText.errors['minlength']">This field can't be empty</div>
+            </div>
+          </div>
+          <button [disabled]="messageForm.invalid" class="btn btn-success float-right" type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>City name</th>
+    <th>City country</th>
+  </tr>
+  <tr *ngFor="let city of citiesList; let i = index" (click)="onCityClick(city)" [routerLink]="['/city-weather', city.cityName]" title="{{city.cityName}} {{city.cityCountry}}">
+    <td>{{i + 1}}</td>
+    <td>{{city.cityName}}</td>
+    <td>{{city.cityCountry}}</td>
+  </tr>
+</table>

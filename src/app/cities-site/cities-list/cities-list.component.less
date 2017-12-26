@@ -1,0 +1,26 @@
+@import '../../../assets/styles/variables/_colors';
+
+table {
+  width: 100%;
+  tr {
+    cursor: pointer;
+    &:nth-child(2n+2) {
+      background-color: lighten(@gray_ef, 5);
+    }
+    &:hover {
+      background-color: #EAFFEF;
+    }
+  }
+  th {
+    padding: 6px;
+    border-bottom: 2px solid @gray_ef;
+  }
+  td {
+    padding: 6px;
+    border-bottom: 1px solid @gray_ef;
+    border-right: 1px dashed @gray_ef;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}

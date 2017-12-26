@@ -1,0 +1,28 @@
+<nav class="mainNavigation">
+  <ul>
+    <li>
+      <a [routerLinkActive]="'active'" routerLink="/home" title="Home">
+        <i class="fa fa-home"></i>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLinkActive]="'active'" routerLink="/cities-site" title="Capitals">
+        <i class="fa fa-building"></i>
+        <span>Capitals</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLinkActive]="'active'" [routerLink]="['/city-weather', '']" title="Your weather">
+        <i class="fa fa-cloud"></i>
+        <span>Your weather</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLinkActive]="'active'" routerLink="/message" title="Send message">
+        <i class="fa fa-envelope"></i>
+        <span>Send message</span>
+      </a>
+    </li>
+  </ul>
+</nav>
