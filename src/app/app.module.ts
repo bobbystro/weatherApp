@@ -14,6 +14,7 @@ import { CityWeatherDetailsComponent } from './city-weather/city-weather-details
 import {HttpModule} from '@angular/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MessageFormComponent } from './message-form/message-form.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { MessageFormComponent } from './message-form/message-form.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [CitiesListService, CityWeatherService],
+  providers: [CitiesListService, CityWeatherService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
